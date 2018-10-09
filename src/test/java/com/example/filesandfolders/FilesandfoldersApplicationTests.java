@@ -1,5 +1,7 @@
 package com.example.filesandfolders;
 
+import com.example.filesandfolders.models.File;
+import com.example.filesandfolders.models.Folder;
 import com.example.filesandfolders.repositories.FileRepo;
 import com.example.filesandfolders.repositories.FolderRepo;
 import org.junit.Test;
@@ -21,6 +23,16 @@ public class FilesandfoldersApplicationTests {
 	public void contextLoads() {
 	}
 
+	@Test
+	public void createFileAndFolderThenSave() {
 
+		Folder folder = new Folder("Folder1");
+		folderRepo.save(folder);
 
+		File file1 = new File("name", "rb", "125kb", folder);
+		fileRepo.save(file1);
+
+		folder.addFile(file1);
+		folderRepo.save(folder);
+	}
 }
