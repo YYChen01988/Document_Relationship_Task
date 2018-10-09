@@ -19,11 +19,16 @@ public class Folder {
     @Column(name = "title")
     private String title;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
     @JsonIgnore
     @OneToMany(mappedBy = "folder", fetch = FetchType.LAZY)
     private List<File> files;
 
-    public Folder(String title) {
+    public Folder(String title, User user) {
+        this.user = user;
         this.title = title;
         this.files = new ArrayList<File>();
     }
@@ -57,5 +62,13 @@ public class Folder {
 
     public void addFile(File file){
         this.files.add(file);
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
