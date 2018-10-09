@@ -10,13 +10,13 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DataSeeds implements ApplicationRunner {
+public class DataLoader implements ApplicationRunner {
     @Autowired
     FolderRepo folderRepo;
     @Autowired
     FileRepo fileRepo;
 
-    public DataSeeds() {
+    public DataLoader() {
     }
 
     public void run(ApplicationArguments args){
