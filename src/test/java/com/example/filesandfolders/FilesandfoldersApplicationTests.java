@@ -29,7 +29,7 @@ public class FilesandfoldersApplicationTests {
 		Folder folder = new Folder("Folder1");
 		folderRepo.save(folder);
 
-		File file1 = new File("name", "rb", "125kb", folder);
+		File file1 = new File("name", "rb", "4KB", folder);
 		fileRepo.save(file1);
 
 		folder.addFile(file1);
