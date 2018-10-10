@@ -6,11 +6,8 @@ import java.io.Serializable;
 @Entity
 @Table(name = "files")
 public class File implements Serializable {
-    //A File should have:
-    //a name
-    //extension (e.g. txt, rb, java, ppt)
-    //size
-    //folder
+    //A File should have: a name, extension (e.g. txt, rb, java, ppt)
+    //size, folder
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

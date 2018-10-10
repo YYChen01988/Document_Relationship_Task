@@ -50,10 +50,14 @@
 			<scope>test</scope>
 		</dependency>
 
+
+		<!--this dependency let us see the data on localhost without route-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
+
+
 
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
